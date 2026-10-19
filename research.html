@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research · Prajwal Nayak</title>
+<meta name="description" content="Research by Prajwal Nayak on energy communities, mechanism design and neural speech coding.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="inner bar mono">
+    <a class="home" href="index.html">Prajwal Nayak / IIT Bombay</a>
+    <nav aria-label="Main">
+      <button class="menu-btn mono" type="button" aria-expanded="false" aria-controls="navlist">Menu</button>
+      <ul class="navlist" id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html" aria-current="page">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="title-band">
+  <div class="inner">
+    <h1 class="page-title split" data-split aria-label="Research">Research</h1>
+    <p class="page-lede">Three threads run through my work: optimizing how energy is shared, designing rules that hold up when people act in their own interest, and compressing speech as far as it will go.</p>
+  </div>
+</div>
+<main>
+<section class="c-lavender block" id="energy" aria-labelledby="h-energy">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-energy">Energy</h2><span class="mono">Optimization for shared energy</span></div>
+    <article class="detail">
+      <span class="mono">Jul 2026 · Paper</span>
+      <div>
+        <h3>Data centers in a residential renewable energy community</h3>
+        <p class="who">With G. S. Kalojiya and Prof. Anupama Kowli, Department of Electrical Engineering, IIT Bombay</p>
+        <p>What happens when a neighbourhood that shares solar power also shares its grid connection with a data center? I built a framework to size storage and share energy across 1,833 households and the IIT Bombay data center, and compared four centralized and decentralized storage configurations.</p>
+        <ul>
+          <li>An LP-based dispatch framework in Pyomo, solved with HiGHS, with rule-based peer-to-peer allocation between participants.</li>
+          <li>Storage architecture matters more than energy sharing: centralized storage cut annual grid imports by 63.16% against a grid-only baseline.</li>
+          <li>Energy sharing matters most in decentralized setups, where cost-effective data center batteries displace residential storage.</li>
+          <li>Storage topology and battery costs together decide how dependent the community stays on the grid and how much of its own energy it uses locally.</li>
+        </ul>
+        <p>Accepted at the Energy Informatics Academy Conference (EI.A 2026), Beijing, for publication in Springer LNCS. <a href="publications.html">Read more</a></p>
+        <ul class="tags mono"><li>Pyomo</li><li>HiGHS</li><li>Linear programming</li><li>Energy communities</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Oct – Nov 2025</span>
+      <div>
+        <h3>Non-intrusive load monitoring</h3>
+        <p class="who">With Prof. Anupama Kowli, Department of Electrical Engineering, IIT Bombay</p>
+        <p>A single smart meter sees a whole home’s consumption at once. Non-intrusive load monitoring tries to work out which appliances are running from that one signal, which is hard when there’s very little labeled data to learn from.</p>
+        <ul>
+          <li>Built a physics-aware synthetic smart-meter generator from appliance signatures to simulate 20 households.</li>
+          <li>Engineered rolling and cyclic-time features from active and reactive power to separate resistive loads from inductive ones.</li>
+          <li>Developed a binary-relevance ensemble of random forest, XGBoost, and a 1D-CNN, with per-appliance weights optimized by SLSQP.</li>
+          <li>Added classification-gated regression and median filtering so appliances read exactly zero power when they’re off.</li>
+          <li>Reached an average F1 of 0.87 and MAE of 10 W on synthetic data: strongest on the fridge (0.99) and geyser (0.97), weakest on the kettle and washing machine (around 0.80).</li>
+        </ul>
+        <ul class="tags mono"><li>Random forest</li><li>XGBoost</li><li>1D-CNN</li><li>SLSQP</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-lilac block" id="mechanisms" aria-labelledby="h-mechanisms">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-mechanisms">Mechanisms</h2><span class="mono">Game theory and mechanism design</span></div>
+    <article class="detail">
+      <span class="mono">Aug 2026 – present</span>
+      <div>
+        <h3>Strategyproof facility location with interval predictions</h3>
+        <p class="who">With Prof. Swaprava Nath, Department of Computer Science and Engineering, IIT Bombay</p>
+        <p>Imagine choosing where to build a single facility on a line, based on where people say they are. If people can benefit by lying about their location, the outcome falls apart. Learning-augmented mechanism design asks how ML predictions can improve these decisions without opening new ways to manipulate them.</p>
+        <ul>
+          <li>Integrating ML confidence intervals that reflect epistemic uncertainty into learning-augmented 1D facility location.</li>
+          <li>Designing mechanisms that resolve the manipulative discontinuities introduced by mixed double-peaked preferences and physical feasibility constraints.</li>
+          <li>Building a simulation with a deviation checker that computationally verifies strategyproofness across all misreports.</li>
+          <li>Using adversarial search to find worst-case instances and evaluate empirical approximation ratios.</li>
+        </ul>
+        <ul class="tags mono"><li>Mechanism design</li><li>Game theory</li><li>Learning-augmented algorithms</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-rose block" id="speech" aria-labelledby="h-speech">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-speech">Speech</h2><span class="mono">Neural audio coding</span></div>
+    <article class="detail">
+      <span class="mono">Mar 2026 – present</span>
+      <div>
+        <h3>Ultra-low-bitrate neural audio codec</h3>
+        <p class="who">Master’s thesis with Prof. Srikanth Chetupalli, Department of Electrical Engineering, IIT Bombay</p>
+        <p>At 1.2 kbps, a speech codec has to throw away almost everything and keep only what a listener needs. Generative models can rebuild the rest, which turns compression into a question of what a model can reliably imagine back.</p>
+        <ul>
+          <li>Implemented LSPnet, a 1.2 kbps neural speech codec for high-fidelity, low-complexity coding.</li>
+          <li>Developed a continuous flow matching (CFM) decoder to improve quality in neural generative audio models.</li>
+          <li>Implementing stochastic interpolants with latent-space representations for efficient probability-flow sampling, compressed-state modeling, and very-low-latency inference.</li>
+          <li>Benchmarking reconstruction fidelity against baselines with objective perceptual metrics (PESQ, STOI).</li>
+        </ul>
+        <ul class="tags mono"><li>PyTorch</li><li>Flow matching</li><li>Stochastic interpolants</li><li>PESQ / STOI</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-peri block" id="earlier" aria-labelledby="h-earlier">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-earlier">Earlier</h2><span class="mono">Systems</span></div>
+    <article class="detail">
+      <span class="mono">May – Jul 2024</span>
+      <div>
+        <h3>High-performance computing cluster</h3>
+        <p class="who">Internship at THFT Laboratory with Prof. Janani Srree Muralidharan, Department of Mechanical Engineering, IIT Bombay</p>
+        <ul>
+          <li>Configured a SLURM cluster on Debian 12 with one master and two compute nodes for parallel workloads.</li>
+          <li>Integrated NFS shared storage and Munge authentication for synchronized data access and secure job execution.</li>
+          <li>Set up static networking and virtual bridging for isolated communication across compute nodes.</li>
+        </ul>
+        <ul class="tags mono"><li>SLURM</li><li>Debian</li><li>NFS</li><li>Munge</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="inner">
+    <span class="mono" style="display:block;margin-bottom:1rem;opacity:.7">Say hello</span>
+    <a class="mail" href="mailto:prajwal.nayak@iitb.ac.in">prajwal.nayak@iitb.ac.in</a>
+    <div class="foot-row mono">
+      <span>© 2026 Prajwal Nayak</span>
+      <ul>
+        <li><a href="https://github.com/Prajwalnayak2506">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/prajwal-nayak-iitb">LinkedIn</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>

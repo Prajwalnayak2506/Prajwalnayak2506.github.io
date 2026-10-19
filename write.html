@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Write · Prajwal Nayak</title>
+<meta name="description" content="Write a new blog post.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="inner bar mono">
+    <a class="home" href="index.html">Prajwal Nayak / IIT Bombay</a>
+    <nav aria-label="Main">
+      <button class="menu-btn mono" type="button" aria-expanded="false" aria-controls="navlist">Menu</button>
+      <ul class="navlist" id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="title-band">
+  <div class="inner">
+    <h1 class="page-title split" data-split aria-label="Write">Write</h1>
+    <p class="page-lede">Write a post here, preview it, then publish it to your site through GitHub.</p>
+  </div>
+</div>
+<main>
+<section class="c-lavender block" aria-labelledby="h-write">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-write">New post</h2><span class="mono">Only you can publish</span></div>
+    <form id="f" class="writer" onsubmit="return false">
+      <label class="mono" for="title">Title</label>
+      <input id="title" required>
+      <div class="two">
+        <div><label class="mono" for="date">Date</label><input id="date" type="date" required></div>
+        <div><label class="mono" for="summary">One-line summary (shown in the list)</label><input id="summary"></div>
+      </div>
+      <label class="mono" for="body">Post (Markdown: **bold**, *italic*, # headings, - lists, [links](url))</label>
+      <textarea id="body" rows="16" required></textarea>
+      <div class="actions">
+        <button type="button" id="publish" class="mono">Publish to GitHub</button>
+        <button type="button" id="copy" class="mono">Copy post text</button>
+        <span class="mono" id="msg" aria-live="polite"></span>
+      </div>
+    </form>
+  </div>
+</section>
+<section class="c-rose block" aria-labelledby="h-prev">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-prev">Preview</h2></div>
+    <article class="post-body" id="preview" style="max-width:42rem;margin-top:2rem"></article>
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="inner">
+    <span class="mono" style="display:block;margin-bottom:1rem;opacity:.7">Say hello</span>
+    <a class="mail" href="mailto:prajwal.nayak@iitb.ac.in">prajwal.nayak@iitb.ac.in</a>
+    <div class="foot-row mono">
+      <span>© 2026 Prajwal Nayak</span>
+      <ul>
+        <li><a href="https://github.com/Prajwalnayak2506">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/prajwal-nayak-iitb">LinkedIn</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+<script>
+  // Your GitHub username and site repository
+  var GH_USER="Prajwalnayak2506", GH_REPO="Prajwalnayak2506.github.io", GH_BRANCH="main";
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.0.6/purify.min.js"></script>
+<script>
+  function parsePost(text){
+    var meta={}, body=text;
+    var m=text.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
+    if(m){ m[1].split("\n").forEach(function(l){var i=l.indexOf(":"); if(i>0) meta[l.slice(0,i).trim()]=l.slice(i+1).trim().replace(/^["']|["']$/g,"");}); body=text.slice(m[0].length); }
+    return {meta:meta, body:body};
+  }
+  function render(md){ return DOMPurify.sanitize(marked.parse(md)); }
+  function niceDate(d){ var t=new Date(d+"T00:00:00"); return isNaN(t)?d:t.toLocaleDateString("en-GB",{day:"numeric",month:"short",year:"numeric"}); }
+</script>
+<style>
+  .writer{padding-top:2.5rem;max-width:46rem;display:grid;gap:.5rem}
+  .writer input,.writer textarea{font-family:var(--serif);font-size:1.15rem;background:var(--lilac);color:var(--ink);border:1.5px solid var(--ink);padding:.6rem .75rem;width:100%;margin-bottom:.75rem}
+  .writer textarea{font-family:var(--mono);font-size:.9rem;line-height:1.6}
+  .two{display:grid;grid-template-columns:12rem minmax(0,1fr);gap:1rem}
+  @media (max-width:44rem){.two{grid-template-columns:1fr;gap:0}}
+  .actions{display:flex;flex-wrap:wrap;gap:.75rem;align-items:center}
+  .actions button{cursor:pointer;background:var(--ink);color:var(--lilac);border:1.5px solid var(--ink);padding:.6rem 1rem}
+  .actions button#copy{background:transparent;color:var(--ink)}
+</style>
+<script>
+(function(){
+  var $=function(id){return document.getElementById(id);};
+  $("date").value=new Date().toISOString().slice(0,10);
+  try{var draft=JSON.parse(localStorage.getItem("post-draft")||"{}");["title","summary","body"].forEach(function(k){if(draft[k])$(k).value=draft[k];});}catch(e){}
+  function text(){
+    var esc=function(s){return (s||"").replace(/"/g,"'");};
+    return "---\ntitle: \""+esc($("title").value)+"\"\ndate: "+$("date").value+"\nsummary: \""+esc($("summary").value)+"\"\n---\n\n"+$("body").value+"\n";
+  }
+  function slug(){return ($("title").value||"post").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"").slice(0,60)||"post";}
+  function update(){
+    $("preview").innerHTML="<h2>"+DOMPurify.sanitize($("title").value||"Untitled")+"</h2>"+render($("body").value);
+    try{localStorage.setItem("post-draft",JSON.stringify({title:$("title").value,summary:$("summary").value,body:$("body").value}));}catch(e){}
+  }
+  ["title","summary","body"].forEach(function(k){$(k).addEventListener("input",update);}); update();
+  $("copy").addEventListener("click",function(){
+    navigator.clipboard.writeText(text()).then(function(){$("msg").textContent="Copied.";},function(){$("msg").textContent="Couldn’t copy. Select the text manually.";});
+  });
+  $("publish").addEventListener("click",function(){
+    if(!$("title").value||!$("body").value){$("msg").textContent="Add a title and some text first.";return;}
+    var fname="posts/"+$("date").value+"-"+slug()+".md";
+    var url="https://github.com/"+GH_USER+"/"+GH_REPO+"/new/"+GH_BRANCH+"?filename="+encodeURIComponent(fname);
+    var full=url+"&value="+encodeURIComponent(text());
+    if(full.length<7500){window.open(full,"_blank");$("msg").textContent="Opened GitHub. Click “Commit changes” there to publish.";}
+    else{navigator.clipboard.writeText(text()).catch(function(){});window.open(url,"_blank");$("msg").textContent="Long post: the text is copied. Paste it into GitHub, then click “Commit changes”.";}
+  });
+})();
+</script>
+</body>
+</html>

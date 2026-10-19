@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Projects · Prajwal Nayak</title>
+<meta name="description" content="Technical projects by Prajwal Nayak in machine learning, signal processing, energy data and hardware.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="inner bar mono">
+    <a class="home" href="index.html">Prajwal Nayak / IIT Bombay</a>
+    <nav aria-label="Main">
+      <button class="menu-btn mono" type="button" aria-expanded="false" aria-controls="navlist">Menu</button>
+      <ul class="navlist" id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="title-band">
+  <div class="inner">
+    <h1 class="page-title split" data-split aria-label="Projects">Projects</h1>
+    <p class="page-lede">Things I’ve built for courses and labs, from neural networks and fingerprint models to a motion-tracking glove and a 200 MS/s ADC.</p>
+  </div>
+</div>
+<main>
+<section class="c-lavender block" id="ml" aria-labelledby="h-ml">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-ml">Machine learning</h2></div>
+    <article class="detail">
+      <span class="mono">Oct 2025 · EE782</span>
+      <div>
+        <h3>Sentinel: AI room guard</h3>
+        <p class="who">Advanced Machine Learning course project</p>
+        <ul>
+          <li>Implemented a real-time AI room guard that uses deep learning to identify authorized personnel and monitor a room.</li>
+          <li>Built a Python face recognition pipeline for detection and encoding under varied environmental conditions.</li>
+          <li>Integrated anomaly detection and real-time alerts to flag unusual activity.</li>
+          <li>Evaluated precision, recall, and inference latency to tune recognition performance and responsiveness.</li>
+        </ul>
+        <ul class="tags mono"><li>Python</li><li>Deep learning</li><li>Anomaly detection</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Sept 2025 · EE782</span>
+      <div>
+        <h3>GeoVision: remote sensing image captioning</h3>
+        <p class="who">Advanced Machine Learning course project</p>
+        <ul>
+          <li>Built CNN-LSTM and CNN-Transformer captioning models on pretrained ResNet-18 and MobileNet backbones.</li>
+          <li>Developed caption tokenization and sequence-generation pipelines for end-to-end training and evaluation.</li>
+          <li>Tuned embeddings, hidden dimensions, and dropout on the RSICD dataset.</li>
+          <li>Evaluated with BLEU-4, where the Transformer variants outperformed the LSTM ones.</li>
+        </ul>
+        <ul class="tags mono"><li>PyTorch</li><li>CNN-LSTM</li><li>Transformers</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-lilac block" id="signals" aria-labelledby="h-signals">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-signals">Signals</h2><span class="mono">Signal processing</span></div>
+    <article class="detail">
+      <span class="mono">Oct – Nov 2025</span>
+      <div>
+        <h3>NeuroDSP: interpretable DSP-CNN for ECG</h3>
+        <p class="who">Digital Signal Processing course project, with Prof. Vikram Gadre</p>
+        <ul>
+          <li>Devised a DSP-CNN architecture with learnable bandpass filters for ECG classification from time-series signals.</li>
+          <li>Parameterized the convolutional bandpass filters with learnable cut-off frequencies, enabling spectral regularization.</li>
+          <li>Implemented attribution mapping to quantify feature relevance and find the ECG segments that drive each decision.</li>
+        </ul>
+        <ul class="tags mono"><li>PyTorch</li><li>Learnable filters</li><li>Interpretability</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Oct – Nov 2024 · EE678</span>
+      <div>
+        <h3>WavePrint: contact-based fingerprint feature learning</h3>
+        <p class="who">Wavelets course project</p>
+        <ul>
+          <li>Combined Haar wavelet transforms with an encoder-decoder CNN for multi-scale feature extraction, denoising, and fine-detail preservation.</li>
+          <li>Developed feature embeddings that combine texture and minutiae information from contact-based fingerprint images.</li>
+          <li>Explored contrastive learning with MoCo v2 and AIRMeC for robust, discriminative fingerprint features.</li>
+        </ul>
+        <ul class="tags mono"><li>Wavelets</li><li>CNNs</li><li>Contrastive learning</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Sept – Nov 2025</span>
+      <div>
+        <h3>FPGA-DSP: open-source DSP teaching kit</h3>
+        <p class="who">Applications of DSP course project</p>
+        <ul>
+          <li>Investigated FPGA implementations of FIR, FFT, and CORDIC with open-source hardware design toolchains.</li>
+          <li>Developed parameterizable streaming DSP modules in Verilog with automated testbenches for Icarus Verilog.</li>
+          <li>Built Q-format fixed-point analysis scripts to simulate quantization noise and meet target signal-to-noise ratios.</li>
+        </ul>
+        <ul class="tags mono"><li>Verilog</li><li>FPGA</li><li>Fixed-point</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Nov 2025 · EE671</span>
+      <div>
+        <h3>RTL-OFDM: 16-QAM modulator and transmitter</h3>
+        <p class="who">VLSI Design course project</p>
+        <ul>
+          <li>Built a synthesizable 16-QAM module in Verilog using Q5.10 fixed-point arithmetic.</li>
+          <li>Constructed a subcarrier mapping unit that arranges six QAM symbols into a 16-point IFFT input sequence.</li>
+          <li>Implemented a radix-2 decimation-in-time 16-point IFFT for frequency-to-time OFDM signal generation.</li>
+          <li>Integrated the transmitter pipeline and validated it with testbenches and GTKWave.</li>
+        </ul>
+        <ul class="tags mono"><li>Verilog</li><li>OFDM</li><li>GTKWave</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-rose block" id="energy" aria-labelledby="h-energy">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-energy">Energy</h2><span class="mono">Energy data</span></div>
+    <article class="detail">
+      <span class="mono">Oct 2025 · EE467</span>
+      <div>
+        <h3>SolarCast: solar power generation forecasting</h3>
+        <p class="who">Energy Data Analytics course project, with Prof. Anupama Kowli</p>
+        <ul>
+          <li>Analyzed time-series solar data with ADF, KPSS, and spectral analysis to identify daily and yearly seasonal patterns.</li>
+          <li>Developed a SARIMA baseline with log, quantile, and Yeo-Johnson transformations for skewed, zero-inflated features.</li>
+          <li>Built a two-stage pipeline with random forest and XGBoost, reaching over 99.8% classification accuracy.</li>
+          <li>Benchmarked the ML models against SARIMA, showing better forecasting accuracy for solar generation.</li>
+        </ul>
+        <ul class="tags mono"><li>Time series</li><li>SARIMA</li><li>XGBoost</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Sept 2025 · EE467</span>
+      <div>
+        <h3>eMARC: energy consumption and household personas</h3>
+        <p class="who">Energy Data Analytics course project, with Prof. Anupama Kowli</p>
+        <ul>
+          <li>Performed exploratory data analysis and data wrangling on time-series household energy consumption data.</li>
+          <li>Engineered normalized features including Energy Use Intensity, per-capita EUI, and a seasonal ratio for clustering.</li>
+          <li>Applied Gaussian mixture models and identified three distinct household energy personas.</li>
+          <li>Used dynamic time warping with hierarchical clustering to group households by the shape of their consumption.</li>
+        </ul>
+        <ul class="tags mono"><li>Clustering</li><li>GMM</li><li>Dynamic time warping</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-peri block" id="hardware" aria-labelledby="h-hardware">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-hardware">Hardware</h2><span class="mono">Hardware and VLSI</span></div>
+    <article class="detail">
+      <span class="mono">Jan – Apr 2025</span>
+      <div>
+        <h3>MIRAGE: motion-integrated articulated glove emulator</h3>
+        <p class="who">Electronic Design Lab, with Prof. Siddharth Tallur</p>
+        <div class="viewer">
+          <canvas id="hand" aria-label="A 3D model of a hand. Drag to rotate it; use the slider to bend the fingers." role="img"></canvas>
+          <div>
+            <label class="mono" for="curl">Bend the fingers</label>
+            <input id="curl" type="range" min="0" max="100" value="25">
+            <p class="hint mono">Drag the hand to rotate it. The glove measured each finger’s bend like this, at 1° precision, and streamed it to a Unity hand model.</p>
+          </div>
+        </div>
+        <ul>
+          <li>Designed a 3D-printed exoskeleton glove with 1° precision, using rotary encoders and a Raspberry Pi Pico W for finger tracking.</li>
+          <li>Implemented real-time UDP wireless transmission in Python for low-latency motion streaming.</li>
+          <li>Developed a Unity 3D hand model with Blender rigging and C# scripting for real-time hand articulation.</li>
+          <li>Designed a custom PCB with multiplexers in KiCad.</li>
+        </ul>
+        <ul class="tags mono"><li>Embedded</li><li>KiCad</li><li>Unity</li><li>Python</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Feb – Mar 2026 · EE619</span>
+      <div>
+        <h3>BootSAR: 10-bit 200 MS/s differential SAR ADC</h3>
+        <p class="who">Mixed-Signal VLSI Design course project</p>
+        <ul>
+          <li>Designed a differential bootstrapped switch in 45 nm CMOS, reaching 11.82-bit ENOB and 72.97 dB SNR at 200 MS/s.</li>
+          <li>Sized hold capacitors and a split-capacitor CDAC using thermal-noise and settling constraints for 10-bit accuracy.</li>
+          <li>Implemented asynchronous SAR logic and CRS switching to reduce average DAC switching energy.</li>
+          <li>Characterized the integrated ADC with an FFT, reaching 62.475 dB SNDR and 10.08-bit ENOB.</li>
+        </ul>
+        <ul class="tags mono"><li>Analog design</li><li>45 nm CMOS</li><li>SAR ADC</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Dec 2025 · EE677</span>
+      <div>
+        <h3>Modular digital logic equivalence checker</h3>
+        <p class="who">Foundations of VLSI CAD course project</p>
+        <ul>
+          <li>Engineered a hybrid equivalence checker combining Python with a C++ backend for fast logic simulation.</li>
+          <li>Automated miter circuit generation from VHDL and Bench netlists, with ID shifting to prevent collisions.</li>
+          <li>Designed a heuristic solver using back-tracing and DFS to isolate counter-example test vectors.</li>
+          <li>Integrated an Espresso logic minimizer (expand, irredundant, reduce) to optimize SOP expressions.</li>
+        </ul>
+        <ul class="tags mono"><li>Python</li><li>C++</li><li>Logic synthesis</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Feb 2026 · EE789</span>
+      <div>
+        <h3>SwitchCraft: arbiter-based 2×2 packet switch</h3>
+        <p class="who">Algorithmic Design of Digital Systems course project</p>
+        <ul>
+          <li>Developed three 2×2 switch architectures using queues, arbiter muxes, and demuxes for distinct routing paths.</li>
+          <li>Implemented priority arbitration with packet-level priority toggling so both inputs get access when both are active.</li>
+          <li>Validated all designs with AHIR testbenches and GHDL simulation.</li>
+        </ul>
+        <ul class="tags mono"><li>AHIR</li><li>GHDL</li><li>Digital design</li></ul>
+      </div>
+    </article>
+    <article class="detail">
+      <span class="mono">Jan 2024 · EE309</span>
+      <div>
+        <h3>IITB-CPU: 16-bit RISC processor</h3>
+        <p class="who">Microprocessors course project</p>
+        <ul>
+          <li>Designed a 16-bit RISC processor with a 6-stage pipeline supporting R-, I-, and J-type instructions.</li>
+          <li>Implemented data forwarding paths and stall mechanisms to handle data hazards.</li>
+          <li>Developed the datapath and control logic, with 8 general-purpose registers (R0 acting as the program counter).</li>
+        </ul>
+        <ul class="tags mono"><li>VHDL</li><li>Pipelining</li><li>Computer architecture</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-lilac block" id="toolbox" aria-labelledby="h-toolbox">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-toolbox">Toolbox</h2></div>
+    <article class="detail">
+      <span class="mono">Toolbox</span>
+      <div>
+        <h3>What I build with</h3>
+        
+        <ul>
+          <li><b>Programming:</b> Python, C++, MATLAB, Verilog, VHDL, Assembly (8051), HTML/CSS</li>
+          <li><b>AI, data science, and ML:</b> PyTorch, TensorFlow, scikit-learn, NumPy, SciPy, Pandas, Matplotlib, Seaborn, NLTK, OpenCV</li>
+          <li><b>Optimization:</b> Pyomo, HiGHS</li>
+          <li><b>DSP and hardware:</b> Cadence Genus, Icarus Verilog, GTKWave, Magic, NGSPICE, LTSpice, Quartus, GNU Radio</li>
+          <li><b>Tools and infrastructure:</b> AWS, Git, PyQt, SLURM, NFS, Munge, Fusion 360, SolidWorks, µVision</li>
+        </ul>
+        
+      </div>
+    </article>
+
+  </div>
+</section>
+
+</main>
+<footer class="foot">
+  <div class="inner">
+    <span class="mono" style="display:block;margin-bottom:1rem;opacity:.7">Say hello</span>
+    <a class="mail" href="mailto:prajwal.nayak@iitb.ac.in">prajwal.nayak@iitb.ac.in</a>
+    <div class="foot-row mono">
+      <span>© 2026 Prajwal Nayak</span>
+      <ul>
+        <li><a href="https://github.com/Prajwalnayak2506">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/prajwal-nayak-iitb">LinkedIn</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+(function(){
+  var canvas=document.getElementById('hand'); if(!canvas||!window.THREE) return;
+  var renderer=new THREE.WebGLRenderer({canvas:canvas,antialias:true,alpha:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  var scene=new THREE.Scene();
+  var camera=new THREE.PerspectiveCamera(35,4/3,0.1,100); camera.position.set(0,2.6,15); camera.lookAt(0,1.6,0);
+  scene.add(new THREE.HemisphereLight(0xffffff,0x9db4f0,0.9));
+  var sun=new THREE.DirectionalLight(0xffffff,0.6); sun.position.set(4,8,6); scene.add(sun);
+  var skin=new THREE.MeshStandardMaterial({color:0xb8a9f2,roughness:.7,flatShading:true});
+  var ink=new THREE.LineBasicMaterial({color:0x1b1730});
+  function box(w,h,d){
+    var g=new THREE.BoxGeometry(w,h,d); var m=new THREE.Mesh(g,skin);
+    m.add(new THREE.LineSegments(new THREE.EdgesGeometry(g),ink)); return m;
+  }
+  var hand=new THREE.Group(); scene.add(hand);
+  var palm=box(3.4,3.6,0.9); palm.position.y=0; hand.add(palm);
+  var joints=[];
+  function finger(x,lens,base,width){
+    var parent=new THREE.Group(); parent.position.set(x,base,0); hand.add(parent);
+    var cur=parent;
+    lens.forEach(function(L){
+      var j=new THREE.Group(); cur.add(j); joints.push(j);
+      var seg=box(width,L,0.75); seg.position.y=L/2; j.add(seg);
+      var next=new THREE.Group(); next.position.y=L+0.05; j.add(next); cur=next;
+    });
+  }
+  finger(-1.25,[1.2,0.85,0.65],1.85,0.7);
+  finger(-0.42,[1.45,1.0,0.75],1.85,0.72);
+  finger(0.42,[1.35,0.95,0.7],1.85,0.72);
+  finger(1.25,[1.05,0.75,0.6],1.85,0.66);
+  var thumbBase=new THREE.Group(); thumbBase.position.set(1.75,-0.6,0.1); thumbBase.rotation.z=-0.9; hand.add(thumbBase);
+  var tj=[]; var cur=thumbBase;
+  [1.1,0.85].forEach(function(L){var j=new THREE.Group();cur.add(j);tj.push(j);var s=box(0.78,L,0.78);s.position.y=L/2;j.add(s);var n=new THREE.Group();n.position.y=L+0.05;j.add(n);cur=n;});
+  hand.rotation.set(-0.15,-0.5,0);
+  var curl=document.getElementById('curl');
+  function setCurl(){
+    var c=curl.value/100;
+    joints.forEach(function(j,i){j.rotation.x=c*[1.1,1.35,1.0][i%3];});
+    tj.forEach(function(j,i){j.rotation.x=c*0.9;});
+    render();
+  }
+  function resize(){var w=canvas.clientWidth,h=canvas.clientHeight;renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();render();}
+  function render(){renderer.render(scene,camera);}
+  var dragging=false,px=0,py=0;
+  canvas.addEventListener('pointerdown',function(e){dragging=true;px=e.clientX;py=e.clientY;canvas.setPointerCapture(e.pointerId);});
+  canvas.addEventListener('pointermove',function(e){if(!dragging)return;hand.rotation.y+=(e.clientX-px)*0.01;hand.rotation.x=Math.max(-1.2,Math.min(1.2,hand.rotation.x+(e.clientY-py)*0.01));px=e.clientX;py=e.clientY;render();});
+  canvas.addEventListener('pointerup',function(){dragging=false;});
+  curl.addEventListener('input',setCurl);
+  window.addEventListener('resize',resize);
+  resize(); setCurl();
+})();
+</script>
+</body>
+</html>
