@@ -32,7 +32,7 @@
 <div class="title-band">
   <div class="inner">
     <h1 class="page-title split" data-split aria-label="Research">Research</h1>
-    <p class="page-lede">Three threads run through my work: optimizing how energy is shared, designing rules that hold up when people act in their own interest, and compressing speech as far as it will go.</p>
+    <p class="page-lede">Four threads run through my work: optimizing how energy is shared, designing rules that hold up when people act in their own interest, compressing speech as far as it will go, and making tokenizers fair to Indian languages.</p>
   </div>
 </div>
 <main>
@@ -40,7 +40,7 @@
   <div class="inner section-pad">
     <div class="sec-head"><h2 class="big" id="h-energy">Energy</h2><span class="mono">Optimization for shared energy</span></div>
     <article class="detail">
-      <span class="mono">Jul 2026 · Paper</span>
+      <span class="mono">2026 · Paper</span>
       <div>
         <h3>Data centers in a residential renewable energy community</h3>
         <p class="who">With G. S. Kalojiya and Prof. Anupama Kowli, Department of Electrical Engineering, IIT Bombay</p>
@@ -51,7 +51,7 @@
           <li>Energy sharing matters most in decentralized setups, where cost-effective data center batteries displace residential storage.</li>
           <li>Storage topology and battery costs together decide how dependent the community stays on the grid and how much of its own energy it uses locally.</li>
         </ul>
-        <p>Accepted at the Energy Informatics Academy Conference (EI.A 2026), Beijing, for publication in Springer LNCS. <a href="publications.html">Read more</a></p>
+        <p>Presented at the Energy Informatics Academy Conference (EI.A 2026) in Beijing, and published by Springer. <a href="https://link.springer.com/chapter/10.1007/978-3-032-41864-7_10">Read the paper</a></p>
         <ul class="tags mono"><li>Pyomo</li><li>HiGHS</li><li>Linear programming</li><li>Energy communities</li></ul>
       </div>
     </article>
@@ -116,7 +116,30 @@
 
   </div>
 </section>
-<section class="c-peri block" id="earlier" aria-labelledby="h-earlier">
+<section class="c-peri block" id="tokenizers" aria-labelledby="h-tokenizers">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-tokenizers">Tokenizers</h2><span class="mono">Fairness across languages</span></div>
+    <article class="detail">
+      <span class="mono">Oct 2026 – present</span>
+      <div>
+        <h3>Fair tokenizers for Indian languages</h3>
+        <p class="who">Course project for Optimization in Machine Learning (CS 769), IIT Bombay</p>
+        <p>Language models don’t read text; they read tokens. If a tokenizer splits Hindi into three times as many pieces as English, Hindi speakers pay more for the same sentence and fit less of it into a model’s context. I’m building Byte Pair Encoding from scratch to study this as an optimization problem.</p>
+        <ul>
+          <li>Formulated BPE as a combinatorial problem: minimize the corpus token count with a fixed number of merges.</li>
+          <li>Proved that each merge saves exactly its pair frequency, that greedy savings never increase (so the compression curve is convex), and that encoding is lossless.</li>
+          <li>Built a small corpus where greedy BPE is provably suboptimal, and confirmed the optimum with an exhaustive search.</li>
+          <li>Moved to byte-level BPE and derived exactly how UTF-8 encodes Devanagari and Kannada, predicting that the first Hindi merge is a fragment that isn’t a character at all. The experiment confirmed it: none of the Hindi tokens in the test words was a readable character.</li>
+          <li>Defined a character-boundary violation count as a first measure of linguistic integrity, and measured parity: with merges learned only from English, the Hindi greeting नमस्ते costs 4.5 times as many tokens as “hello”.</li>
+          <li>Next: train on the FLORES-200 parallel corpus in English, Hindi, and Kannada, and treat compression, cross-lingual parity, and akshara integrity as separate objectives.</li>
+        </ul>
+        <ul class="tags mono"><li>Python</li><li>Byte Pair Encoding</li><li>UTF-8</li><li>Multi-objective optimization</li></ul>
+      </div>
+    </article>
+
+  </div>
+</section>
+<section class="c-lavender block" id="earlier" aria-labelledby="h-earlier">
   <div class="inner section-pad">
     <div class="sec-head"><h2 class="big" id="h-earlier">Earlier</h2><span class="mono">Systems</span></div>
     <article class="detail">
@@ -146,6 +169,7 @@
       <ul>
         <li><a href="https://github.com/Prajwalnayak2506">GitHub</a></li>
         <li><a href="https://www.linkedin.com/in/prajwal-nayak-iitb">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&amp;user=1xWL8SQAAAAJ">Scholar</a></li>
         <li><a href="cv.pdf">CV</a></li>
       </ul>
     </div>
