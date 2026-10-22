@@ -1,8 +1,92 @@
 {
-  "example-drawing.jpg": {
-    "title": "Title of the drawing",
-    "date": "2026-10",
+  "wizard_birth.jpeg": {
+    "title": "Wizard Birth",
+    "date": "2021",
+    "medium": "Digital",
+    "story": "No deep story behind this one. I made it in 2021, around the time I started watching more and more anime, and I just randomly decided to draw."
+  },
+  "pretty_girl.jpeg": {
+    "title": "Pretty Girl",
+    "date": "",
+    "medium": "Digital line art",
+    "story": "Same as Wizard Birth: no big story here. I made it once anime had fully taken over my free time, just because I felt like drawing."
+  },
+  "mitsuhaa.png": {
+    "title": "Mitsuha",
+    "date": "",
+    "medium": "Pencil on a diary page",
+    "story": "Mitsuha and Taki are the two main characters of the movie Your Name, which I have watched around 25 times. I cannot fully explain the way it touches my heart. The animation is amazing, the songs are beautiful, and it makes me feel an emotion I had never felt before watching it.\n\nThis is Mitsuha."
+  },
+  "taki.png": {
+    "title": "Taki",
+    "date": "",
+    "medium": "Pencil on a diary page",
+    "story": "Mitsuha and Taki are the two main characters of the movie Your Name, which I have watched around 25 times. I cannot fully explain the way it touches my heart. The animation is amazing, the songs are beautiful, and it makes me feel an emotion I had never felt before watching it.\n\nThis is Taki."
+  },
+  "c2.png": {
+    "title": "C.C.",
+    "date": "",
     "medium": "Pencil on paper",
-    "story": "Write the story behind this drawing here.\n\nLeave an empty line between paragraphs."
+    "story": "C.C. is from Code Geass. She is a really powerful and amazing-looking character, very clever and smart, and honestly someone I admire and would like to be like."
+  },
+  "cc2.png": {
+    "title": "C.C., Again",
+    "date": "",
+    "medium": "Pencil on paper",
+    "story": "C.C. is from Code Geass. She is a really powerful and amazing-looking character, very clever and smart, and honestly someone I admire and would like to be like.\n\nOne drawing of her was not enough, so here is a second one."
+  },
+  "eye-tear.png": {
+    "title": "Tear",
+    "date": "2019",
+    "medium": "Pencil on paper",
+    "story": "I drew this in 2019. It was the first time I fell for a straight guy, while at the same time figuring out that I am gay. It was my first romantic heartbreak, and a huge milestone in my life."
+  },
+  "ovary.png": {
+    "title": "T.S. of Mammalian Ovary",
+    "date": "2019",
+    "medium": "Pencil on paper",
+    "story": "This one shows my interest in biology, from 2019. Drawing these diagrams was one of my favourite parts of school, and I am missing school time right now."
+  },
+  "plant.png": {
+    "title": "Parts of a Flower",
+    "date": "2019",
+    "medium": "Pencil on paper",
+    "story": "Another one from my biology days in 2019: the parts of a flower and a cross-section of an anther. I am missing school time right now."
+  },
+  "radar.png": {
+    "title": "Scattering Mechanisms",
+    "date": "",
+    "medium": "Pen on paper",
+    "story": "While reading a book on radar systems, I came across an amazing drawing of how radar waves scatter off aircraft, and I wanted to replicate it. :D"
+  },
+  "relief_print.jpg": {
+    "title": "Relief Print",
+    "date": "2026",
+    "medium": "Linocut, black and white",
+    "story": "I made this with printmaking, using the reduction process and the relief technique on a black and white linoleum sheet. In relief printing, everything I carve away stays white, and everything I leave behind takes the ink."
+  },
+  "dragon-1.jpg": {
+    "title": "Dragon, Print 1",
+    "date": "2026",
+    "medium": "Reduction linocut",
+    "story": "This is a reduction linocut, made with the relief technique on a single linoleum sheet. In a reduction print, I carve away a little of the block, print one colour, then carve away more and print the next colour on top, all from the same sheet. Once a part is carved away, there is no going back, so every layer is final.\n\nAll four prints are supposed to be the same, but each one came out with its own texture. That happened because of small shifts in registration, the alignment of the paper with the block between colours. I love that the mistakes made each one unique."
+  },
+  "dragon-2.png": {
+    "title": "Dragon, Print 2",
+    "date": "2026",
+    "medium": "Reduction linocut",
+    "story": "This is a reduction linocut, made with the relief technique on a single linoleum sheet. In a reduction print, I carve away a little of the block, print one colour, then carve away more and print the next colour on top, all from the same sheet. Once a part is carved away, there is no going back, so every layer is final.\n\nAll four prints are supposed to be the same, but each one came out with its own texture. That happened because of small shifts in registration, the alignment of the paper with the block between colours. I love that the mistakes made each one unique."
+  },
+  "dragon-3.png": {
+    "title": "Dragon, Print 3",
+    "date": "2026",
+    "medium": "Reduction linocut",
+    "story": "This is a reduction linocut, made with the relief technique on a single linoleum sheet. In a reduction print, I carve away a little of the block, print one colour, then carve away more and print the next colour on top, all from the same sheet. Once a part is carved away, there is no going back, so every layer is final.\n\nAll four prints are supposed to be the same, but each one came out with its own texture. That happened because of small shifts in registration, the alignment of the paper with the block between colours. I love that the mistakes made each one unique."
+  },
+  "dragon-4.png": {
+    "title": "Dragon, Print 4",
+    "date": "2026",
+    "medium": "Reduction linocut",
+    "story": "This is a reduction linocut, made with the relief technique on a single linoleum sheet. In a reduction print, I carve away a little of the block, print one colour, then carve away more and print the next colour on top, all from the same sheet. Once a part is carved away, there is no going back, so every layer is final.\n\nAll four prints are supposed to be the same, but each one came out with its own texture. That happened because of small shifts in registration, the alignment of the paper with the block between colours. I love that the mistakes made each one unique."
   }
 }

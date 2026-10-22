@@ -120,7 +120,7 @@
   var pieces=[], cur=0, lastFocus=null;
 
   function nice(n){return n.replace(/\.[^.]+$/,"").replace(/^\d{4}-\d{2}(-\d{2})?[-_]?/,"").replace(/[-_]+/g," ").replace(/\b\w/g,function(c){return c.toUpperCase();});}
-  function niceDate(d){if(!d)return "";var t=new Date(d+(d.length===7?"-01":"")+"T00:00:00");return isNaN(t)?d:t.toLocaleDateString("en-GB",{month:"long",year:"numeric"});}
+  function niceDate(d){if(!d)return "";if(/^\d{4}$/.test(d))return d;var t=new Date(d+(d.length===7?"-01":"")+"T00:00:00");return isNaN(t)?d:t.toLocaleDateString("en-GB",{month:"long",year:"numeric"});}
 
   Promise.all([
     fetch(api).then(function(r){if(r.status===404)return [];if(!r.ok)throw 0;return r.json();}),
