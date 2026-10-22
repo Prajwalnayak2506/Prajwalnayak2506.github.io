@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Sketchbook · Prajwal Nayak</title>
+<meta name="description" content="Drawings, sketches and the stories behind them, by Prajwal Nayak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="top">
+  <div class="inner bar mono">
+    <a class="home" href="index.html">Prajwal Nayak / IIT Bombay</a>
+    <nav aria-label="Main">
+      <button class="menu-btn mono" type="button" aria-expanded="false" aria-controls="navlist">Menu</button>
+      <ul class="navlist" id="navlist">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="sketchbook.html" aria-current="page">Sketchbook</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="title-band">
+  <div class="inner">
+    <h1 class="page-title split" data-split aria-label="Sketchbook">Sketchbook</h1>
+    <p class="page-lede">Drawings, sketches, and other things I make by hand, each with the story of how it came to be.</p>
+  </div>
+</div>
+<main>
+<section class="c-lilac block sk" aria-labelledby="h-pieces">
+  <div class="inner section-pad">
+    <div class="sec-head"><h2 class="big" id="h-pieces">Pieces</h2><span class="mono" id="sk-count"></span></div>
+    <p class="empty" id="sk-status">Loading drawings…</p>
+    <div class="sk-wall" id="sk-wall" hidden></div>
+  </div>
+</section>
+
+<div class="sk-story" id="sk-story" role="dialog" aria-modal="true" aria-labelledby="sk-title" hidden>
+  <div class="sk-story-inner">
+    <figure class="sk-story-fig"><img id="sk-img" alt=""></figure>
+    <div class="sk-story-text">
+      <p class="mono" id="sk-meta"></p>
+      <h2 id="sk-title"></h2>
+      <div id="sk-text"></div>
+      <div class="sk-nav mono">
+        <button type="button" id="sk-prev">← Previous</button>
+        <button type="button" id="sk-next">Next →</button>
+        <button type="button" id="sk-close">Close ✕</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer class="foot">
+  <div class="inner">
+    <span class="mono" style="display:block;margin-bottom:1rem;opacity:.7">Say hello</span>
+    <a class="mail" href="mailto:prajwal.nayak@iitb.ac.in">prajwal.nayak@iitb.ac.in</a>
+    <div class="foot-row mono">
+      <span>© 2026 Prajwal Nayak</span>
+      <ul>
+        <li><a href="https://github.com/Prajwalnayak2506">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/prajwal-nayak-iitb">LinkedIn</a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&amp;user=1xWL8SQAAAAJ">Scholar</a></li>
+        <li><a href="cv.pdf">CV</a></li>
+      </ul>
+    </div>
+  </div>
+</footer>
+<script src="site.js"></script>
+<style>
+  .sk-wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:3rem 2.5rem;padding:3rem 0 1rem;perspective:1100px}
+  .sk-card{position:relative;display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;text-align:left;color:inherit;
+    transform-style:preserve-3d;transform:rotate(var(--r,0deg));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+  .sk-frame{display:block;position:relative;background:#fff;border:1.5px solid var(--ink);padding:.7rem .7rem 0;transform-style:preserve-3d;
+    box-shadow:0 14px 0 -6px rgba(27,23,48,.18);transition:box-shadow .4s}
+  .sk-frame img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;transform:translateZ(14px);background:var(--lilac)}
+  .sk-cap{display:block;padding:.7rem .1rem .8rem;transform:translateZ(26px)}
+  .sk-cap b{display:block;font-family:var(--serif);font-weight:400;font-size:1.25rem;line-height:1.2}
+  .sk-cap span{font-family:var(--mono);font-size:.72rem;opacity:.65}
+  .sk-glare{position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;
+    background:radial-gradient(circle at var(--gx,50%) var(--gy,50%),rgba(255,255,255,.55),transparent 55%);transform:translateZ(28px)}
+  .sk-card:hover .sk-frame,.sk-card:focus-visible .sk-frame{box-shadow:0 30px 30px -18px rgba(27,23,48,.45)}
+  .sk-card:hover .sk-glare{opacity:1}
+  .sk-tape{position:absolute;top:-.7rem;left:50%;width:4.5rem;height:1.3rem;margin-left:-2.25rem;background:rgba(184,169,242,.75);
+    border:1px solid rgba(27,23,48,.25);transform:translateZ(30px) rotate(var(--t,-3deg))}
+  @media (prefers-reduced-motion:reduce){.sk-card{transition:none}}
+
+  .sk-story{position:fixed;inset:0;z-index:50;background:var(--ink);color:var(--lilac);overflow-y:auto}
+  .sk-story-inner{max-width:76rem;margin:0 auto;padding:calc(2rem + env(safe-area-inset-top,0px)) 1.75rem calc(2rem + env(safe-area-inset-bottom,0px));
+    display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:3rem;align-items:center;min-height:100%}
+  @media (max-width:52rem){.sk-story-inner{grid-template-columns:1fr;gap:1.5rem}}
+  .sk-story-fig{margin:0;background:#fff;border:1.5px solid var(--lavender);padding:.8rem}
+  .sk-story-fig img{display:block;width:100%;max-height:78vh;object-fit:contain}
+  .sk-story-text h2{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--lavender);font-size:clamp(2.4rem,6vw,4.5rem);line-height:.95;margin:.4rem 0 1.25rem}
+  .sk-story-text p{font-size:1.2rem;line-height:1.6;margin:0 0 1rem}
+  .sk-nav{display:flex;flex-wrap:wrap;gap:.6rem;margin-top:2rem}
+  .sk-nav button{font:inherit;cursor:pointer;background:none;color:var(--lilac);border:1.5px solid var(--lavender);padding:.45rem .8rem}
+  .sk-nav button:hover{background:var(--lavender);color:var(--ink)}
+  body.sk-open{overflow:hidden}
+</style>
+<script>
+(function(){
+  // Your GitHub username and site repository
+  var GH_USER="Prajwalnayak2506", GH_REPO="Prajwalnayak2506.github.io", GH_BRANCH="main";
+  var api="https://api.github.com/repos/"+GH_USER+"/"+GH_REPO+"/contents/art?ref="+GH_BRANCH;
+  var raw=function(n){return "https://raw.githubusercontent.com/"+GH_USER+"/"+GH_REPO+"/"+GH_BRANCH+"/art/"+encodeURIComponent(n);};
+  var wall=document.getElementById("sk-wall"), status=document.getElementById("sk-status");
+  var reduce=matchMedia("(prefers-reduced-motion: reduce)").matches, fine=matchMedia("(hover: hover) and (pointer: fine)").matches;
+  var pieces=[], cur=0, lastFocus=null;
+
+  function nice(n){return n.replace(/\.[^.]+$/,"").replace(/^\d{4}-\d{2}(-\d{2})?[-_]?/,"").replace(/[-_]+/g," ").replace(/\b\w/g,function(c){return c.toUpperCase();});}
+  function niceDate(d){if(!d)return "";var t=new Date(d+(d.length===7?"-01":"")+"T00:00:00");return isNaN(t)?d:t.toLocaleDateString("en-GB",{month:"long",year:"numeric"});}
+
+  Promise.all([
+    fetch(api).then(function(r){if(r.status===404)return [];if(!r.ok)throw 0;return r.json();}),
+    fetch(raw("stories.json")).then(function(r){return r.ok?r.json():{};}).catch(function(){return {};})
+  ]).then(function(res){
+    var files=(res[0]||[]).filter(function(f){return /\.(jpe?g|png|webp|gif)$/i.test(f.name);}), stories=res[1]||{};
+    if(!files.length){status.textContent="The first drawings are on their way.";return;}
+    pieces=files.map(function(f){var s=stories[f.name]||{};return {src:raw(f.name),name:f.name,title:s.title||nice(f.name),date:s.date||"",medium:s.medium||"",story:s.story||""};});
+    pieces.sort(function(a,b){return (b.date||"").localeCompare(a.date||"")||a.name.localeCompare(b.name);});
+    pieces.forEach(function(p,i){
+      var b=document.createElement("button"); b.type="button"; b.className="sk-card";
+      b.style.setProperty("--r",(((i*37)%7)-3)*0.6+"deg"); b.style.setProperty("--t",(((i*53)%9)-4)+"deg");
+      b.setAttribute("aria-label","Open "+p.title);
+      b.innerHTML='<span class="sk-frame"><span class="sk-tape"></span><img loading="lazy" alt=""><span class="sk-cap"><b></b><span></span></span><span class="sk-glare"></span></span>';
+      b.querySelector("img").src=p.src; b.querySelector("img").alt=p.title;
+      b.querySelector("b").textContent=p.title;
+      b.querySelector(".sk-cap span").textContent=[p.medium,niceDate(p.date)].filter(Boolean).join(" · ");
+      if(fine&&!reduce){
+        b.addEventListener("pointermove",function(e){
+          var r=b.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;
+          b.style.transition="transform .08s linear";
+          b.style.transform="rotateX("+((.5-y)*16)+"deg) rotateY("+((x-.5)*18)+"deg) translateZ(18px)";
+          b.style.setProperty("--gx",x*100+"%"); b.style.setProperty("--gy",y*100+"%");
+        });
+        b.addEventListener("pointerleave",function(){b.style.transition="";b.style.transform="";});
+      }
+      b.addEventListener("click",function(){open(i);});
+      wall.appendChild(b);
+    });
+    status.hidden=true; wall.hidden=false;
+    document.getElementById("sk-count").textContent=pieces.length+(pieces.length===1?" piece":" pieces");
+  }).catch(function(){status.textContent="Couldn’t load the drawings right now. Please try again in a bit.";});
+
+  var dlg=document.getElementById("sk-story");
+  function show(i){
+    cur=(i+pieces.length)%pieces.length; var p=pieces[cur];
+    var img=document.getElementById("sk-img"); img.src=p.src; img.alt=p.title;
+    document.getElementById("sk-title").textContent=p.title;
+    document.getElementById("sk-meta").textContent=[p.medium,niceDate(p.date)].filter(Boolean).join(" · ");
+    var t=document.getElementById("sk-text"); t.innerHTML="";
+    (p.story||"No story written for this one yet.").split(/\n\s*\n/).forEach(function(par){var el=document.createElement("p");el.textContent=par;t.appendChild(el);});
+  }
+  function open(i){lastFocus=document.activeElement;show(i);dlg.hidden=false;document.body.classList.add("sk-open");document.getElementById("sk-close").focus();}
+  function close(){dlg.hidden=true;document.body.classList.remove("sk-open");if(lastFocus)lastFocus.focus();}
+  document.getElementById("sk-close").addEventListener("click",close);
+  document.getElementById("sk-prev").addEventListener("click",function(){show(cur-1);});
+  document.getElementById("sk-next").addEventListener("click",function(){show(cur+1);});
+  document.addEventListener("keydown",function(e){if(dlg.hidden)return;if(e.key==="Escape")close();if(e.key==="ArrowLeft")show(cur-1);if(e.key==="ArrowRight")show(cur+1);});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "example-drawing.jpg": {
+    "title": "Title of the drawing",
+    "date": "2026-10",
+    "medium": "Pencil on paper",
+    "story": "Write the story behind this drawing here.\n\nLeave an empty line between paragraphs."
+  }
+}
