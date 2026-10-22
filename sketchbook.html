@@ -132,7 +132,7 @@
     var names=Object.keys(stories);
     if(!names.length){status.textContent="The first drawings are on their way.";return;}
     pieces=names.map(function(n){var s=stories[n]||{};return {name:n,full:full(n),thumb:thumb(n),title:s.title||nice(n),date:s.date||"",medium:s.medium||"",story:s.story||""};});
-    pieces.sort(function(a,b){return (b.date||"").localeCompare(a.date||"")||a.name.localeCompare(b.name);});
+    for(var k=pieces.length-1;k>0;k--){var j=Math.floor(Math.random()*(k+1));var tmp=pieces[k];pieces[k]=pieces[j];pieces[j]=tmp;}
     pieces.forEach(function(p,i){
       var b=document.createElement("button"); b.type="button"; b.className="sk-card";
       b.style.setProperty("--r",(((i*37)%7)-3)*0.6+"deg"); b.style.setProperty("--t",(((i*53)%9)-4)+"deg");
